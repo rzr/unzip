@@ -2,7 +2,9 @@ Source: unzip
 Section: utils
 Priority: optional
 Maintainer: Santiago Vila <sanvila@debian.org>
-Standards-Version: 3.7.2
+Standards-Version: 3.9.2
+Build-Depends: libbz2-dev
+Homepage: http://www.info-zip.org/UnZip.html
 
 Package: unzip
 Architecture: any

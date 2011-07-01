@@ -1,3 +1,51 @@
+unzip (6.0-5) unstable; urgency=low
+
+  * Handle the PKWare verification bit of internal attributes.
+    Patch taken from 6.10 beta. Thanks to sms. Closes: #630078.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 01 Jul 2011 19:06:08 +0200
+
+unzip (6.0-4) unstable; urgency=low
+
+  * Added homepage field to control file.
+  * Switch to 3.0 (quilt) source format.
+  * Support cross-build.
+
+ -- Santiago Vila <sanvila@debian.org>  Sun, 21 Feb 2010 17:01:00 +0100
+
+unzip (6.0-3) unstable; urgency=low
+
+  * Added "set -e" to postinst and postrm.
+
+ -- Santiago Vila <sanvila@debian.org>  Tue, 09 Feb 2010 23:53:42 +0100
+
+unzip (6.0-2) unstable; urgency=low
+
+  * Do not ignore errors from make clean (lintian warning)
+  * Remove .comment section from executables (lintian warning).
+  * Added mime stuff so that mutt is able to see the contents of a zipfile
+    using "unzip -l". Closes: #474538.
+
+ -- Santiago Vila <sanvila@debian.org>  Mon, 08 Feb 2010 18:44:00 +0100
+
+unzip (6.0-1) unstable; urgency=low
+
+  * New upstream release. Closes: #496989.
+  * Enabled new Unicode support. Closes: #197427. This may or may not work
+    for your already created zipfiles, but it's not a bug unless they were
+    created using the Unicode feature present in zip 3.0.
+  * Built using DATE_FORMAT=DF_YMD so that unzip -l show dates in ISO format,
+    as that's the only available one which makes sense. Closes: #312886.
+  * Enabled new bzip2 support. Closes: #426798.
+  * Exit code for zipgrep should now be the right one. Closes: #441997.
+  * The reason why a file may not be created is now shown. Closes: #478791.
+  * Summary of changes in this version not being the debian/* files:
+  - Manpages in section 1, not 1L.
+  - Branding patch. UnZip by Debian. Original by Info-ZIP.
+  - Always #include <unistd.h>. Debian GNU/kFreeBSD needs it.
+
+ -- Santiago Vila <sanvila@debian.org>  Fri, 08 May 2009 20:02:40 +0200
+
 unzip (5.52-12) unstable; urgency=medium
 
   * Fixed stack underflow in unshrink.c. Closes: #454037.
