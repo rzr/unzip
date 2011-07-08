@@ -1,0 +1,75 @@
+Source: unzip
+Section: user/utilities
+Priority: optional
+Maintainer: Andrew Zabolotny <zap@homelink.ru>
+XSBC-Bugtracker: mailto:zap@homelink.ru
+XSBC-Original-Maintainer: Daniel Martin Yerga <dyerga@gmail.com>, Danny Milosavljevic <danny.milo@gmx.net>
+Standards-Version: 3.6.1
+Build-Depends: sharutils, libbz2-dev
+
+Package: unzip
+Architecture: any
+Depends: ${shlibs:Depends}
+Conflicts: unzip-crypt
+Replaces: unzip-crypt
+Suggests: zip
+XB-Maemo-Display-Name: InfoZIP's UnZip
+Description: Command-line de-archiver for .zip files
+ InfoZIP's unzip program. With the exception of multi-volume archives
+ (ie, .ZIP files that are split across several disks using PKZIP's /& option),
+ this can handle any file produced either by PKZIP, or the corresponding
+ InfoZIP zip program.
+ .
+ This package provides unzip version 6.x series, which is a substantial
+ improvement over the older still widely used 5.x series.
+XB-Maemo-Icon-26:
+ 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
+ SUVORK5CYII=

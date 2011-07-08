@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<mime-info xmlns='http://www.freedesktop.org/standards/shared-mime-info'>
+	<mime-type type="application/zip">
+		<alias type="application/x-zip-compressed"/>
+		<comment>ZIP archive</comment>
+		<comment xml:lang="bg">Архив, формат ZIP</comment>
+		<comment xml:lang="cs">Archiv ZIP</comment>
+		<comment xml:lang="cy">Archif ZIP</comment>
+		<comment xml:lang="da">ZIP-arkiv</comment>
+		<comment xml:lang="de">ZIP-Archiv</comment>
+		<comment xml:lang="el">αρχείο ZIP</comment>
+		<comment xml:lang="eo">ZIP-arkivo</comment>
+		<comment xml:lang="es">Archivo ZIP</comment>
+		<comment xml:lang="eu">ZIP artxiboa</comment>
+		<comment xml:lang="fi">ZIP-arkisto</comment>
+		<comment xml:lang="fr">archive Zip</comment>
+		<comment xml:lang="hu">ZIP-archívum</comment>
+		<comment xml:lang="it">Archivio ZIP</comment>
+		<comment xml:lang="ja">ZIP アーカイブ</comment>
+		<comment xml:lang="ko">ZIP 아카이브</comment>
+		<comment xml:lang="lt">ZIP archyvas</comment>
+		<comment xml:lang="ms">Arkib ZIP</comment>
+		<comment xml:lang="nb">ZIP-arkiv</comment>
+		<comment xml:lang="nl">ZIP-archief</comment>
+		<comment xml:lang="nn">ZIP-arkiv</comment>
+		<comment xml:lang="pl">Archiwum ZIP</comment>
+		<comment xml:lang="pt">arquivo ZIP</comment>
+		<comment xml:lang="pt_BR">Arquivo ZIP</comment>
+		<comment xml:lang="ru">архив ZIP</comment>
+		<comment xml:lang="sq">Arkiv ZIP</comment>
+		<comment xml:lang="sr">Зип архива</comment>
+		<comment xml:lang="sv">ZIP-arkiv</comment>
+		<comment xml:lang="uk">Архів ZIP</comment>
+		<comment xml:lang="vi">Bản nén ZIP</comment>
+		<comment xml:lang="zh_CN">ZIP 压缩包</comment>
+		<comment xml:lang="zh_TW">ZIP 保存檔</comment>
+
+		<glob pattern="*.zip"/>
+		<glob pattern="*.cbz"/>
+
+		<magic priority="40">
+			<match value="PK\003\004" type="string" offset="0"/>
+		</magic>
+
+	</mime-type>
+</mime-info>

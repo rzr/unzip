@@ -1,0 +1,8 @@
+This is the Maemo prepackaged version of "unzip", Info-Zip's fast,
+portable, zipfile decompression utility.
+
+See the project home page at:
+
+http://garage.maemo.org/projects/zip-unzip/
+
+This package also includes the patches from the Debian unzip package.

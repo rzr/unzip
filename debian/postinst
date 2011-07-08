@@ -1,0 +1,16 @@
+#! /bin/sh
+
+case "$1" in
+    configure)
+        # Update MIME database only if it's older than the packages dir
+        if test -x /usr/bin/update-mime-database -a \
+           /usr/share/mime/mime.cache -ot /usr/share/mime/packages; then
+            update-mime-database /usr/share/mime
+        fi
+        if test -x /usr/bin/gtk-update-icon-cache; then
+            /usr/bin/gtk-update-icon-cache -f -t /usr/share/icons/hicolor
+        fi
+        ;;
+esac
+
+#DEBHELPER#

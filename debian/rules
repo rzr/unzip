@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+
+PKG_VERSION = 6.0
+DEB_TARBALL = unzip60.tar.gz
+DEB_TAR_SRCDIR = unzip$(subst .,,$(PKG_VERSION))
+DEB_DH_INSTALL_SOURCEDIR = build-tree/$(DEB_TAR_SRCDIR)
+
+DEB_EXTRATARBALL = bzip2-1.0.6.tar.gz
+
+CC = gcc
+CFLAGS = -s -Wall
+DEFINES = -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR
+
+include /usr/share/cdbs/1/rules/tarball.mk
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+ifeq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+    CFLAGS += -O2
+endif
+
+clean::
+	rm -f *.cdbs-config_list debian/stamp-*
+
+common-build-arch common-build-indep:: debian/stamp-build
+debian/stamp-build:
+	cd $(DEB_DH_INSTALL_SOURCEDIR) && \
+	$(MAKE) -f unix/Makefile LF2="" CC="$(CC)" \
+		CF="$(CFLAGS) -I. $(DEFINES)" generic
+	touch $@
+
+pre-build:: debian/stamp-$(DEB_EXTRATARBALL)
+
+debian/stamp-$(DEB_EXTRATARBALL): debian/stamp-$(DEB_TARBALL)
+	tar -C $(DEB_DH_INSTALL_SOURCEDIR)/bzip2 --strip-components=1 -xzf $(DEB_EXTRATARBALL)
+
+binary-post-install/unzip::
+	rm -rf debian/unzip/usr/share/doc
+	uudecode debian/zip-26.b64 -o debian/unzip/usr/share/icons/hicolor/26x26/mimetypes/application-zip.png
+	uudecode debian/zip-48.b64 -o debian/unzip/usr/share/icons/hicolor/48x48/mimetypes/application-zip.png
+	uudecode debian/zip-64.b64 -o debian/unzip/usr/share/icons/hicolor/64x64/mimetypes/application-zip.png

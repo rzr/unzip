@@ -1,0 +1,7 @@
+opt/unzip/bin/unzip usr/bin/unzip
+opt/unzip/bin/funzip usr/bin/funzip
+opt/unzip/bin/unzipsfx usr/bin/unzipsfx
+opt/unzip/bin/unzip usr/bin/zipinfo
+usr/share/icons/hicolor/26x26/mimetypes/application-zip.png usr/share/icons/hicolor/26x26/mimetypes/application-x-zip-compressed.png
+usr/share/icons/hicolor/48x48/mimetypes/application-zip.png usr/share/icons/hicolor/48x48/mimetypes/application-x-zip-compressed.png
+usr/share/icons/hicolor/64x64/mimetypes/application-zip.png usr/share/icons/hicolor/64x64/mimetypes/application-x-zip-compressed.png

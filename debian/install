@@ -1,0 +1,4 @@
+funzip /opt/unzip/bin
+unzip /opt/unzip/bin
+unzipsfx /opt/unzip/bin
+../../debian/unzip.xml usr/share/mime/packages
