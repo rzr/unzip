@@ -1,17 +1,17 @@
 #!/usr/bin/make -f
 
-PKG_VERSION = 6.0
-DEB_TARBALL = unzip60.tar.gz
-DEB_TAR_SRCDIR = unzip$(subst .,,$(PKG_VERSION))
-DEB_DH_INSTALL_SOURCEDIR = build-tree/$(DEB_TAR_SRCDIR)
+#PKG_VERSION = 6.0
+#DEB_TARBALL = unzip60.tar.gz
+#DEB_TAR_SRCDIR = unzip$(subst .,,$(PKG_VERSION))
+#DEB_DH_INSTALL_SOURCEDIR = build-tree/$(DEB_TAR_SRCDIR)
 
-DEB_EXTRATARBALL = bzip2-1.0.6.tar.gz
+#DEB_EXTRATARBALL = bzip2-1.0.6.tar.gz
 
 CC = gcc
 CFLAGS = -s -Wall
 DEFINES = -DACORN_FTYPE_NFS -DWILD_STOP_AT_DIR
 
-include /usr/share/cdbs/1/rules/tarball.mk
+#include /usr/share/cdbs/1/rules/tarball.mk
 include /usr/share/cdbs/1/rules/debhelper.mk
 
 ifeq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
@@ -23,7 +23,7 @@ clean::
 
 common-build-arch common-build-indep:: debian/stamp-build
 debian/stamp-build:
-	cd $(DEB_DH_INSTALL_SOURCEDIR) && \
+	echo cd $(DEB_DH_INSTALL_SOURCEDIR) && \
 	$(MAKE) -f unix/Makefile LF2="" CC="$(CC)" \
 		CF="$(CFLAGS) -I. $(DEFINES)" generic
 	touch $@

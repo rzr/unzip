@@ -5,7 +5,7 @@ Maintainer: Andrew Zabolotny <zap@homelink.ru>
 XSBC-Bugtracker: mailto:zap@homelink.ru
 XSBC-Original-Maintainer: Daniel Martin Yerga <dyerga@gmail.com>, Danny Milosavljevic <danny.milo@gmx.net>
 Standards-Version: 3.6.1
-Build-Depends: sharutils, libbz2-dev
+Build-Depends: sharutils, libbz2-dev, cdbs
 
 Package: unzip
 Architecture: any
